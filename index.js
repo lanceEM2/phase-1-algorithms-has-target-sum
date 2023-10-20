@@ -1,6 +1,19 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
+function hasTargetSum(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === target) {
+        return true; // Found a pair that adds up to the target
+      }
+    }
+  }
+  return false; // No pair found
 }
+
+// Example usage:
+const arr = [1, 2, 3, 4, 5];
+const target = 9;
+console.log(hasTargetSum(arr, target)); // true (3 + 6 = 9)
+
 
 /* 
   Write the Big O time complexity of your function here
